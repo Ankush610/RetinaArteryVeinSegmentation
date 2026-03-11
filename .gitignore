@@ -1,0 +1,6 @@
+main/__pycache__
+main/files
+main/logs
+main/models
+visualizers/models
+.vscode
