@@ -18,8 +18,10 @@ retinaavseg/
 │   ├── model.py
 │   ├── metrics.py
 │   ├── utils.py
-│   └── visualize.py     # Gradio inference
 ├── samples/             # Sample images
+├── validators/
+├── visualizers/vessel_analyzer.py
+├── visualizers/visualizer.py  # To visualize 
 └── requirements.txt
 ```
 
@@ -34,6 +36,7 @@ conda create -n retinaavseg python=3.11
 conda activate retinaavseg
 conda install -c conda-forge uv
 uv pip install -r requirements.txt
+uv pip install -r ./visualizers/requirements.txt
 ```
 
 ### 2. Configure Paths
@@ -61,7 +64,7 @@ bash job_ddp.sh
 ### 4. Run Inference
 
 ```bash
-cd main
+cd visualizers
 python visualize.py
 ```
 
