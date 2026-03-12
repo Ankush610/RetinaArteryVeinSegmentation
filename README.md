@@ -9,19 +9,18 @@ Deep learning pipeline for retinal artery-vein segmentation from fundus images u
 ```
 retinaavseg/
 ├── main/
-│   ├── dataset/          # Dataset loader & preprocessing
-│   ├── models/           # Saved models
-│   ├── job.sh           # Single GPU training
-│   ├── job_ddp.sh       # Multi-GPU training
-│   ├── train_old.py     # Single GPU trainer
-│   ├── train_ddp.py     # DDP trainer
+│   ├── dataset/                         # Dataset loader & preprocessing
+│   ├── models/                          # Saved models
+│   ├── job.sh                           # Single GPU training
+│   ├── job_ddp.sh                       # Multi-GPU training
+│   ├── train.py                     # Single GPU trainer
+│   ├── train_ddp.py                     # DDP trainer
 │   ├── model.py
 │   ├── metrics.py
 │   ├── utils.py
-├── samples/             # Sample images
-├── validators/
-├── visualizers/vessel_analyzer.py
-├── visualizers/visualizer.py  # To visualize 
+│   ├── visualizers/vessel_analyzer.py   # to perfrom analysis on av
+│   ├── visualizers/visualizer.py        # To visualize 
+├── samples/                             # Sample images
 └── requirements.txt
 ```
 
@@ -36,7 +35,6 @@ conda create -n retinaavseg python=3.11
 conda activate retinaavseg
 conda install -c conda-forge uv
 uv pip install -r requirements.txt
-uv pip install -r ./visualizers/requirements.txt
 ```
 
 ### 2. Configure Paths
@@ -64,7 +62,7 @@ bash job_ddp.sh
 ### 4. Run Inference
 
 ```bash
-cd visualizers
+cd main/visualizers
 python visualize.py
 ```
 

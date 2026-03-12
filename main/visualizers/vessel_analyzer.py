@@ -19,7 +19,7 @@ from model import build_unet
 
 # ================= CONFIG =================
 
-checkpoint_path = "./models/checkpoint.pth"
+checkpoint_path = "../models/checkpoint.pth"
 image_size = (512, 512)
 
 # BGR (OpenCV format)
